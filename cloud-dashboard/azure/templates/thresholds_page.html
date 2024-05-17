@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picogrid Send Thresholds Application</title>
+</head>
+
+<body>
+  <h1 style="text-align: center;">Picogrid Send Thresholds Application</h1>
+
+  <div style="text-align: center;">
+    <a href="/" style="text-align:center; background-color: cornflowerblue; color: aliceblue; padding: 0.5em;">Homepage</a>
+  </div>
+
+  <form action="/submit-thresholds" method="post">
+    <h3>Enter Threshold Values (as a decimal from 0.000 to 1.000 with 3 decimal places)</h3>
+    <label for="pv_thresh">PV Threshold: </label>
+    <input type="number" id="pv_thresh" name="pv_thresh" min="0" max="1" step="0.001" required>
+    <br>
+
+    <label for="us_thresh">US Threshold: </label>
+    <input type="number" id="us_thresh" name="us_thresh" min="0" max="1" step="0.001" required>
+    <br>
+
+    <label for="im_thresh">IM Threshold: </label>
+    <input type="number" id="im_thresh" name="im_thresh" min="0" max="1" step="0.001" required>
+    <br>
+
+    <label for="lo1_thresh">Load 1 Threshold: </label>
+    <input type="number" id="lo1_thresh" name="lo1_thresh" min="0" max="1" step="0.001" required>
+    <br>
+
+    <label for="lo2_thresh">Load 2 Threshold: </label>
+    <input type="number" id="lo2_thresh" name="lo2_thresh" min="0" max="1" step="0.001" required>
+    <br>
+
+    <label for="lo3_thresh">Load 3 Threshold: </label>
+    <input type="number" id="lo3_thresh" name="lo3_thresh" min="0" max="1" step="0.001" required>
+    <br>
+
+    <label for="ex_thresh">EX Threshold: </label>
+    <input type="number" id="ex_thresh" name="ex_thresh" min="0" max="1" step="0.001" required>
+    <br>
+
+    <label for="chosen_threshold_board">Choose which picoboard's data you require: </label>
+    <select name="chosen_threshold_board" id="chosen_threshold_board" required>
+    <option value="varun_photon">Varun's Photon 2</option>
+    <option value="varun_argon">Varun's Argon</option>
+    <option value="Fe">Fe</option>
+    <option value="Co">Co</option>
+    <option value="Ni">Ni</option>
+    <option value="Ti">Ti</option>
+    </select>
+      
+    <button type="submit">Submit</button>
+    <br>
+  </form>
+
+    {% if input_failure %}
+    <h4 style="color: red;">Wrong Input, try again.</h4>
+    <br>
+    {% endif %}
+
+
+    {% if input_success %}
+    <h4 style="color: green;">Input Successful!</h4>
+    <br>
+    {% endif %}
+
+</body>

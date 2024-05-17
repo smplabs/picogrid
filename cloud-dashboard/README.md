@@ -1,0 +1,1 @@
+This folder contains steps to set up the cloud dashboard using Microsoft Azure or using Mathworks ThingSpeak.

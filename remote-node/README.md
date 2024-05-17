@@ -1,0 +1,2 @@
+The remote node can be any system with an internet connection, not necessarily co-located with the Pico boards.
+* send-setpoints.jl - contains sample code in Julia that can be implemented on a remote node to send setpoints to a Pico board

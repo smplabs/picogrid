@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picogrid Data Retrieval Application</title>
+</head>
+
+<body>
+  <h1 style="text-align: center;">Picogrid Data Retrieval App</h1>
+  <div style="text-align: center;">
+    <a href="/" style="text-align:center; background-color: cornflowerblue; color: aliceblue; padding: 0.5em;">Homepage</a>
+  </div>
+
+  <form action="/submit-datetimes" method="post">
+    <h3>Enter Start Date</h3>
+    <label for="startYear">Year:</label>
+    <input type="number" id="startYear" name="startYear" min="1900" max="2100" required>
+    <label for="startMonth">Month:</label>
+    <input type="number" id="startMonth" name="startMonth" min="1" max="12" required>
+    <label for="startDay">Day:</label>
+    <input type="number" id="startDay" name="startDay" min="1" max="31" required>
+    <label for="startHour">Hour:</label>
+    <input type="number" id="startHour" name="startHour" min="0" max="23" required>
+    <label for="startMinute">Minute:</label>
+    <input type="number" id="startMinute" name="startMinute" min="0" max="59" required>
+    
+    <h3>Enter End Date (within 7 days of Start Date)</h3>
+    <label for="endYear">Year:</label>
+    <input type="number" id="endYear" name="endYear" min="1900" max="2100" required>
+    <label for="endMonth">Month:</label>
+    <input type="number" id="endMonth" name="endMonth" min="1" max="12" required>
+    <label for="endDay">Day:</label>
+    <input type="number" id="endDay" name="endDay" min="1" max="31" required>
+    <label for="endHour">Hour:</label>
+    <input type="number" id="endHour" name="endHour" min="0" max="23" required>
+    <label for="endMinute">Minute:</label>
+    <input type="number" id="endMinute" name="endMinute" min="0" max="59" required>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  {% if datetime_input_failure %}
+    <h4 style="color: red;">Wrong Input, try again.</h4>
+    <br>
+  {% endif %}
+
+  {% if datetime_input_success %}
+    <h4 style="color: green;">Input Successful!</h4>
+    <br>
+    <form action="/submit_chosen_picoboard" method="post">
+      <label for="picoboard">Choose which picoboard's data you require: </label>
+      <select name="picoboard" id="picoboard" required>
+        <option value="varun_photon">Varun's Photon 2</option>
+        <option value="varun_argon">Varun's Argon</option>
+        <option value="Fe">Fe</option>
+        <option value="Co">Co</option>
+        <option value="Ni">Ni</option>
+        <option value="Ti">Ti</option>
+      </select>
+      <button type="submit">Submit</button>
+      {% if picoboard_chosen %}
+      <p>Board Chosen: {{picoboard_variable}}</p>
+      {% endif %}
+    </form>
+  {% endif %}
+
+  {% if picoboard_chosen %}
+    <br>
+    <form action="/submit_variable_to_plot" method="post">
+      <label for="variables">Choose a variable to plot for the date range inputted: </label>
+      <select name="variables" id="variables" required>
+        <option value="v_pv">PV Voltage</option>
+        <option value="i_pv">PV Current</option>
+        <option value="v_us">USB Voltage</option>
+        <option value="i_us">USB Current</option>
+        <option value="v_im">IM Voltage</option>
+        <option value="i_im">IM Current</option>
+        <option value="v_cell">Cell Voltage</option>
+        <option value="i_cell">Cell Current</option>
+        <option value="v_boost">Boost Voltage</option>
+        <option value="i_lo1">Load 1 Curent</option>
+        <option value="i_lo2">Load 2 Current</option>
+        <option value="i_lo3">Load 3 Current</option>
+        <option value="i_ex">Export Current</option>
+        <option value="soc">State of Charge</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+    {% if plot_graph %}
+    <p>Variable Chosen: {{chosen_var}}</p>
+    {% endif %}
+  {% endif %}
+  
+  {% if plot_graph %}
+    {% if empty_data %}
+      <p>No data in this timeframe for this board</p>
+    {% else %}
+      <img src="/static/images/plot.png" alt="Plot" height="350" width="520">
+      <br>
+      <a href={{specific_download_file}} style="background-color: cadetblue; color: blue; padding: 0.5em; margin: 0.5em;" download>Download Specific Data</a> 
+      <a href={{full_download_file}} style="background-color: cadetblue; color: blue; padding: 0.5em; margin: 0.5em;" download>Download Complete Data</a> 
+      <br>
+    {% endif %}
+  {% endif %}
+</body>
+
+</html>
