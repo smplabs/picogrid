@@ -18,6 +18,7 @@ These layers together form a small benchtop microgrid or a ``picogrid" and emula
 
 ## Citation
 Link and citation for our publication: [Picogrid: An experimental platform for prosumer microgrids](https://ieeexplore.ieee.org/abstract/document/10362891)   
+```
 @inproceedings{marathe2023picogrid,   
   title={Picogrid: An experimental platform for prosumer microgrids},   
   author={Marathe, Maitreyee and Venkataramanan, Giri},   
@@ -26,6 +27,7 @@ Link and citation for our publication: [Picogrid: An experimental platform for p
   year={2023},   
   organization={IEEE}   
 }
+```
 
 ## Acknowledgments
 We would like to thank Gabriela
