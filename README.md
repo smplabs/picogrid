@@ -8,7 +8,7 @@ The Picogrid is a low-cost low-power experimental platform for energy access and
 
 ![Picogrid Platform](picogrid-platform.png)
 
-These layers together form a small benchtop microgrid or a ``picogrid" and emulate their real-world counterparts. Pico boards emulate prosumer households. The remote node emulates a load serving entity, DERMS (distributed energy resource management system), or a microgrid operator which can provide operating set points to the prosumers. The cloud dashboard emulates the data transfer system between the prosumers and the operator.  
+These layers together form a small benchtop microgrid or a "picogrid" and emulate their real-world counterparts. Pico boards emulate prosumer households. The remote node emulates a load serving entity, DERMS (distributed energy resource management system), or a microgrid operator which can provide operating set points to the prosumers. The cloud dashboard emulates the data transfer system between the prosumers and the operator.  
 
 ## File organization
 * pcb-files - contains Gerber files for building Pico boards and add-on modules
