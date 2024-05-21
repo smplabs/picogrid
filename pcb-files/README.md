@@ -1,5 +1,5 @@
 ## Pico board PCB
-The image belows shows the pico board developed with the major sections labelled.
+The image below shows the actual pico board PCB developed with the major sections labelled.
 ![Pico board](picoboard.png) 
 
 ## File Organization
