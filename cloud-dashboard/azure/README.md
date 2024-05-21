@@ -6,6 +6,13 @@ This platform is a web application developed with Python (+ [Flask](https://flas
 - **static**: a temporary store to hold the data which the user retrieves and the plots that are generated (the files within these are deleted on each refresh of the app)
 - **templates**: HTML pages with [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) templating to dynamically show content based on user interaction with platform
 
+## Cloud Dashboard Screenshots
+The image below shows the data retrival page of the dashboard. Users can get data out from specific Pico boards based on the time frames of their experiment in CSV format for further analysis.
+![Data Retrieval Page](data-retrieval-page.png)
+
+The image below shows the sending thresholds (for threshold-based energy management) page of the dashboard. Users can send setpoints from the dashboard to the hardware with minimal latency to allow dynamic changes during experiments
+![Thresholds Page](thresholds-page.png)
+
 ## Setup
 1. After downloading the code and [having pip installed](https://pypi.org/project/pip/), navigate to the folder in Terminal / PowerShell and run `pip install -r requirements.txt` to download all packages
 2. Set up Azure IoT Hub and a Particle Integration to connect the Particle Argon to Azure using these [instructions](https://docs.particle.io/community/photon-maker-kit-workshop/ch3/)
