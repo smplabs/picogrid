@@ -7,11 +7,12 @@ This platform is a web application developed with Python (+ [Flask](https://flas
 - **templates**: HTML pages with [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) templating to dynamically show content based on user interaction with platform
 
 ## Cloud Dashboard Screenshots
-The image below shows the data retrieval page of the dashboard. Users can get data out from specific Pico boards based on the time frames of their experiment in CSV format for further analysis.
-![Data Retrieval Page](data-retrieval-page.png)
+The image below shows the data retrieval page of the dashboard. Users can get data out from specific Pico boards based on the time frames of their experiment in CSV format for further analysis.   
+<img src="data-retrieval-page.png" width="400" />
 
-The image below shows the page that can be used to send setpoints (such as thresholds to actuate loads and sources) from the dashboard to the Pico boards. This enables users to make dynamic changes with minimal latency during experiments.
-![Thresholds Page](thresholds-page.png)
+The image below shows the page that can be used to send setpoints (such as thresholds to actuate loads and sources) from the dashboard to the Pico boards. This enables users to make dynamic changes with minimal latency during experiments.   
+<img src="thresholds-page.png" width="400" />
+
 
 ## Setup
 1. After downloading the code and [having pip installed](https://pypi.org/project/pip/), navigate to the folder in Terminal / PowerShell and run `pip install -r requirements.txt` to download all packages
