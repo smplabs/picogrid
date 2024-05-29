@@ -1,6 +1,7 @@
 ## Pico board PCB
-The image below shows the Pico board with the major sections labelled.
-![Pico board](picoboard.png) 
+The image below shows the Pico board with the major sections labelled.   
+<img src="picoboard.png" width="600" />
+
 
 ## File Organization
 * pico-board - files for the Pico board
